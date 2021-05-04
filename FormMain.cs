@@ -17,9 +17,42 @@ namespace WindowsFormsApp1
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void frmMain_Load(object sender, EventArgs e)
         {
-
+            Functions.Connect();
         }
+        
+
+        private void mnuExit_Click(object sender, EventArgs e)
+        {
+            //Đóng kết nối database
+            Functions.Disconnect();
+            Application.Exit();
+        }
+
+        private void mnuMaterial_Click(object sender, EventArgs e)
+        {
+            frmMaterial frmM = new frmMaterial();
+            frmM.ShowDialog();  // .Show(); dang thong thuong
+        }
+
+        private void mnuStaff_Click(object sender, EventArgs e)
+        {
+            frmStaff frmS = new frmStaff();
+            frmS.ShowDialog(); // .Show(); dang thong thuong
+        }
+
+        private void mnuCustommer_Click(object sender, EventArgs e)
+        {
+            frmCustomer frmC = new frmCustomer();
+            frmC.ShowDialog(); // .Show(); dang thong thuong
+        }
+
+        private void mnuGoods_Click(object sender, EventArgs e)
+        {
+            frmGoods frmG = new frmGoods();
+            frmG.ShowDialog(); // .Show(); dang thong thuong
+        }
+
     }
 }

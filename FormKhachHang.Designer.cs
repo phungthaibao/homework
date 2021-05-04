@@ -212,6 +212,7 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.label1);
             this.Name = "frmCustomer";
             this.Text = "Danh mục khách hàng";
+            this.Load += new System.EventHandler(this.frmCustomer_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvListCustomer)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -33,8 +33,8 @@ namespace WindowsFormsApp1
             this.mnuFile = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuExit = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuCategory = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuStaff = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuMaterial = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuStaff = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuCustommer = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuGoods = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuBills = new System.Windows.Forms.ToolStripMenuItem();
@@ -81,41 +81,46 @@ namespace WindowsFormsApp1
             this.mnuExit.Name = "mnuExit";
             this.mnuExit.Size = new System.Drawing.Size(141, 34);
             this.mnuExit.Text = "Exit";
+            this.mnuExit.Click += new System.EventHandler(this.mnuExit_Click);
             // 
             // mnuCategory
             // 
             this.mnuCategory.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuStaff,
             this.mnuMaterial,
+            this.mnuStaff,
             this.mnuCustommer,
             this.mnuGoods});
             this.mnuCategory.Name = "mnuCategory";
             this.mnuCategory.Size = new System.Drawing.Size(100, 29);
             this.mnuCategory.Text = "Category";
             // 
-            // mnuStaff
-            // 
-            this.mnuStaff.Name = "mnuStaff";
-            this.mnuStaff.Size = new System.Drawing.Size(191, 34);
-            this.mnuStaff.Text = "Staff";
-            // 
             // mnuMaterial
             // 
             this.mnuMaterial.Name = "mnuMaterial";
-            this.mnuMaterial.Size = new System.Drawing.Size(191, 34);
+            this.mnuMaterial.Size = new System.Drawing.Size(270, 34);
             this.mnuMaterial.Text = "Material";
+            this.mnuMaterial.Click += new System.EventHandler(this.mnuMaterial_Click);
+            // 
+            // mnuStaff
+            // 
+            this.mnuStaff.Name = "mnuStaff";
+            this.mnuStaff.Size = new System.Drawing.Size(270, 34);
+            this.mnuStaff.Text = "Staff";
+            this.mnuStaff.Click += new System.EventHandler(this.mnuStaff_Click);
             // 
             // mnuCustommer
             // 
             this.mnuCustommer.Name = "mnuCustommer";
-            this.mnuCustommer.Size = new System.Drawing.Size(191, 34);
+            this.mnuCustommer.Size = new System.Drawing.Size(270, 34);
             this.mnuCustommer.Text = "Customer";
+            this.mnuCustommer.Click += new System.EventHandler(this.mnuCustommer_Click);
             // 
             // mnuGoods
             // 
             this.mnuGoods.Name = "mnuGoods";
-            this.mnuGoods.Size = new System.Drawing.Size(191, 34);
+            this.mnuGoods.Size = new System.Drawing.Size(270, 34);
             this.mnuGoods.Text = "Goods";
+            this.mnuGoods.Click += new System.EventHandler(this.mnuGoods_Click);
             // 
             // mnuBills
             // 
@@ -204,7 +209,7 @@ namespace WindowsFormsApp1
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmMain";
             this.Text = "Chương trình quản lý bán hàng";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Load += new System.EventHandler(this.frmMain_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

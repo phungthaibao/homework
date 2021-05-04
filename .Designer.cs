@@ -1,7 +1,7 @@
 ﻿
 namespace WindowsFormsApp1
 {
-    partial class frmMaterials
+    partial class frmMaterial
     {
         /// <summary>
         /// Required designer variable.
@@ -29,74 +29,77 @@ namespace WindowsFormsApp1
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnModify = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.btnSkip = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.labelName = new System.Windows.Forms.Label();
+            this.labelID = new System.Windows.Forms.Label();
             this.txtNameMaterial = new System.Windows.Forms.TextBox();
             this.txtIDMaterial = new System.Windows.Forms.TextBox();
             this.dgvMaterial = new System.Windows.Forms.DataGridView();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMaterial)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // button1
+            // btnAdd
             // 
-            this.button1.Location = new System.Drawing.Point(26, 382);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(96, 55);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Add";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnAdd.Location = new System.Drawing.Point(3, 3);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(96, 55);
+            this.btnAdd.TabIndex = 0;
+            this.btnAdd.Text = "Add";
+            this.btnAdd.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnDelete
             // 
-            this.button2.Location = new System.Drawing.Point(160, 382);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(96, 55);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Delete";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnDelete.Location = new System.Drawing.Point(136, 3);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(96, 55);
+            this.btnDelete.TabIndex = 1;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnModify
             // 
-            this.button3.Location = new System.Drawing.Point(286, 382);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(96, 55);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Modify";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnModify.Location = new System.Drawing.Point(266, 3);
+            this.btnModify.Name = "btnModify";
+            this.btnModify.Size = new System.Drawing.Size(96, 55);
+            this.btnModify.TabIndex = 2;
+            this.btnModify.Text = "Modify";
+            this.btnModify.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // btnSave
             // 
-            this.button4.Location = new System.Drawing.Point(417, 382);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(96, 55);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "Save";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnSave.Location = new System.Drawing.Point(412, 3);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(96, 55);
+            this.btnSave.TabIndex = 3;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.button4_Click);
             // 
-            // button5
+            // btnSkip
             // 
-            this.button5.Location = new System.Drawing.Point(546, 382);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(96, 55);
-            this.button5.TabIndex = 4;
-            this.button5.Text = "Skip";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnSkip.Location = new System.Drawing.Point(559, 3);
+            this.btnSkip.Name = "btnSkip";
+            this.btnSkip.Size = new System.Drawing.Size(96, 55);
+            this.btnSkip.TabIndex = 4;
+            this.btnSkip.Text = "Skip";
+            this.btnSkip.UseVisualStyleBackColor = true;
             // 
-            // button6
+            // btnClose
             // 
-            this.button6.Location = new System.Drawing.Point(676, 382);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(96, 55);
-            this.button6.TabIndex = 5;
-            this.button6.Text = "Close";
-            this.button6.UseVisualStyleBackColor = true;
+            this.btnClose.Location = new System.Drawing.Point(692, 3);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(96, 55);
+            this.btnClose.TabIndex = 5;
+            this.btnClose.Text = "Close";
+            this.btnClose.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -108,28 +111,28 @@ namespace WindowsFormsApp1
             this.label1.Size = new System.Drawing.Size(254, 46);
             this.label1.TabIndex = 6;
             this.label1.Text = "List Materials";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // label2
+            // labelName
             // 
-            this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(21, 120);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(108, 20);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "Tên Chất Liệu";
+            this.labelName.AutoSize = true;
+            this.labelName.ForeColor = System.Drawing.Color.Black;
+            this.labelName.Location = new System.Drawing.Point(21, 120);
+            this.labelName.Name = "labelName";
+            this.labelName.Size = new System.Drawing.Size(108, 20);
+            this.labelName.TabIndex = 7;
+            this.labelName.Text = "Tên Chất Liệu";
+            this.labelName.Click += new System.EventHandler(this.labelName_Click);
             // 
-            // label3
+            // labelID
             // 
-            this.label3.AutoSize = true;
-            this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(21, 80);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(107, 20);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "Mã Chất Liệu ";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+            this.labelID.AutoSize = true;
+            this.labelID.ForeColor = System.Drawing.Color.Black;
+            this.labelID.Location = new System.Drawing.Point(21, 80);
+            this.labelID.Name = "labelID";
+            this.labelID.Size = new System.Drawing.Size(107, 20);
+            this.labelID.TabIndex = 8;
+            this.labelID.Text = "Mã Chất Liệu ";
+            this.labelID.Click += new System.EventHandler(this.labelID_Click);
             // 
             // txtNameMaterial
             // 
@@ -148,34 +151,44 @@ namespace WindowsFormsApp1
             // dgvMaterial
             // 
             this.dgvMaterial.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMaterial.Location = new System.Drawing.Point(26, 168);
+            this.dgvMaterial.Location = new System.Drawing.Point(0, 168);
             this.dgvMaterial.Name = "dgvMaterial";
             this.dgvMaterial.RowHeadersWidth = 62;
             this.dgvMaterial.RowTemplate.Height = 28;
-            this.dgvMaterial.Size = new System.Drawing.Size(748, 195);
+            this.dgvMaterial.Size = new System.Drawing.Size(800, 195);
             this.dgvMaterial.TabIndex = 11;
             // 
-            // frmMaterials
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.btnAdd);
+            this.panel1.Controls.Add(this.btnDelete);
+            this.panel1.Controls.Add(this.btnModify);
+            this.panel1.Controls.Add(this.btnSave);
+            this.panel1.Controls.Add(this.btnSkip);
+            this.panel1.Controls.Add(this.btnClose);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 381);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(800, 68);
+            this.panel1.TabIndex = 12;
+            // 
+            // frmMaterial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 449);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.dgvMaterial);
             this.Controls.Add(this.txtIDMaterial);
             this.Controls.Add(this.txtNameMaterial);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.labelID);
+            this.Controls.Add(this.labelName);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Name = "frmMaterials";
+            this.Name = "frmMaterial";
             this.Text = "Danh mục chất liệu";
-            this.Load += new System.EventHandler(this.Form2_Load);
+            this.Load += new System.EventHandler(this.frmMaterial_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMaterial)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -183,17 +196,18 @@ namespace WindowsFormsApp1
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnModify;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button btnSkip;
+        private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label labelName;
+        private System.Windows.Forms.Label labelID;
         private System.Windows.Forms.TextBox txtNameMaterial;
         private System.Windows.Forms.TextBox txtIDMaterial;
         private System.Windows.Forms.DataGridView dgvMaterial;
+        private System.Windows.Forms.Panel panel1;
     }
 }

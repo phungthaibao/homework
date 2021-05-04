@@ -54,6 +54,7 @@ namespace WindowsFormsApp1
             this.btnAdd.TabIndex = 0;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnDelete
             // 
@@ -81,7 +82,6 @@ namespace WindowsFormsApp1
             this.btnSave.TabIndex = 3;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.button4_Click);
             // 
             // btnSkip
             // 
@@ -121,7 +121,6 @@ namespace WindowsFormsApp1
             this.labelName.Size = new System.Drawing.Size(108, 20);
             this.labelName.TabIndex = 7;
             this.labelName.Text = "Tên Chất Liệu";
-            this.labelName.Click += new System.EventHandler(this.labelName_Click);
             // 
             // labelID
             // 
@@ -132,7 +131,6 @@ namespace WindowsFormsApp1
             this.labelID.Size = new System.Drawing.Size(107, 20);
             this.labelID.TabIndex = 8;
             this.labelID.Text = "Mã Chất Liệu ";
-            this.labelID.Click += new System.EventHandler(this.labelID_Click);
             // 
             // txtNameMaterial
             // 

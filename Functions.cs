@@ -7,6 +7,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
+
 namespace WindowsFormsApp1
 {
     class Functions
@@ -33,6 +34,18 @@ namespace WindowsFormsApp1
                 conn.Dispose(); // giai phong tai nguyen
                 conn = null;
             }
+        }
+        public static DataTable GetDataToTable(string sql)
+        {
+            SqlDataAdapter dap = new SqlDataAdapter(); //Định nghĩa đối tượng thuộc lớp SqlDataAdapter
+            //Tạo đối tượng thuộc lớp SqlCommand
+            dap.SelectCommand = new SqlCommand();
+            dap.SelectCommand.Connection = Functions.conn; //Kết nối cơ sở dữ liệu
+            dap.SelectCommand.CommandText = sql; //Lệnh SQL
+            //Khai báo đối tượng table thuộc lớp DataTable
+            DataTable table = new DataTable();
+            dap.Fill(table);
+            return table;
         }
     }
 }

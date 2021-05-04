@@ -47,5 +47,32 @@ namespace WindowsFormsApp1
             dap.Fill(table);
             return table;
         }
+        public static bool CheckKey(string sql)
+        {
+            SqlDataAdapter dap = new SqlDataAdapter(sql, conn);
+            DataTable table = new DataTable();
+            if (table.Rows.Count > 0)
+                return true;
+            else return false;
+
+        }
+        public static void RunSQL(string sql)
+        {
+            SqlCommand cmd;
+            cmd = new SqlCommand();
+            cmd.CommandText = sql;
+            cmd.Connection = conn;
+            try
+            {
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+
+            }
+            cmd.Dispose();
+            cmd = null;
+        }
     }
 }

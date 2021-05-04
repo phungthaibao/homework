@@ -82,5 +82,69 @@ namespace WindowsFormsApp1
             txtIDMaterial.Text = "";
             txtNameMaterial.Text = "";
         }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            string sql; //Lưu lệnh sql
+            if (txtIDMaterial.Text.Trim().Length == 0) //Nếu chưa nhập mã chất liệu
+            {
+                MessageBox.Show("Bạn phải nhập mã chất liệu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtIDMaterial.Focus();
+                return;
+            }
+            if (txtNameMaterial.Text.Trim().Length == 0) //Nếu chưa nhập tên chất liệu
+            {
+                MessageBox.Show("Bạn phải nhập tên chất liệu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtNameMaterial.Focus();
+                return;
+            }
+            sql = "Select MaChatLieu From tblChatLieu where MaChatLieu=N'" + txtIDMaterial.Text.Trim() + "'";
+            if (Functions.CheckKey(sql))
+            {
+                MessageBox.Show("Mã chất liệu này đã có, bạn phải nhập mã khác", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtIDMaterial.Focus();
+                return;
+            }
+
+            sql = "INSERT INTO tblChatLieu VALUES(N'" +
+                txtIDMaterial.Text + "',N'" + txtNameMaterial.Text + "')";
+            Functions.RunSQL(sql);
+            LoadDataGirdView();
+            ResetValue();
+            btnDelete.Enabled = true;
+            btnAdd.Enabled = true;
+            btnModify.Enabled = true;
+            btnSkip.Enabled = false;
+            btnSave.Enabled = false;
+            txtIDMaterial.Enabled = false;
+        }
+
+        private void btnModify_Click(object sender, EventArgs e)
+        {
+            string sql; //Lưu câu lệnh sql
+            if (tblCL.Rows.Count == 0)
+            {
+                MessageBox.Show("Không còn dữ liệu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            if (txtIDMaterial.Text == "") //nếu chưa chọn bản ghi nào
+            {
+                MessageBox.Show("Bạn chưa chọn bản ghi nào", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            if (txtNameMaterial.Text.Trim().Length == 0) //nếu chưa nhập tên chất liệu
+            {
+                MessageBox.Show("Bạn chưa nhập tên chất liệu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            sql = "UPDATE tblChatLieu SET TenChatLieu=N'" +
+                txtNameMaterial.Text.ToString() +
+                "' WHERE MaChatLieu=N'" + txtIDMaterial.Text + "'";
+            Functions.RunSQL(sql);
+            LoadDataGirdView();
+            ResetValue();
+
+            btnSkip.Enabled = false;
+        }
     }
 }

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data;
 using System.Data.SqlClient; // SQL server
 using WindowsFormsApp1; // class Functions.cs
 
@@ -15,7 +16,7 @@ namespace WindowsFormsApp1
 {
     public partial class frmMaterial : Form
     {
-        DataTable ; // name table Chat lieu can add them 
+        DataTable tblChatLieu; // name table Chat lieu can add them 
         public frmMaterial()
         {
             InitializeComponent();
@@ -26,7 +27,7 @@ namespace WindowsFormsApp1
             txtIDMaterial.Enabled = false;
             btnSave.Enabled = false;
             btnSkip.Enabled = false;
-            LoadDataGridView(); //Hiển thị bảng tblChatLieu
+            dgvMaterial();//Hiển thị bảng tblChatLieu
         }
 
         private void labelID_Click(object sender, EventArgs e)

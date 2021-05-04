@@ -16,7 +16,8 @@ namespace WindowsFormsApp1
         public static void Connect()
         {
             conn = new SqlConnection();
-            conn.ConnectionString = @"";
+            conn.ConnectionString = @"";//them PATH ket noi database
+
             conn.Open();
 
             if (conn.State == ConnectionState.Open)

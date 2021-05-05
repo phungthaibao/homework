@@ -17,7 +17,7 @@ namespace WindowsFormsApp1
         public static void Connect()
         {
             conn = new SqlConnection();
-            conn.ConnectionString = @"Data Source=ADMIN;Initial Catalog=homework;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";//them PATH ket noi database
+            conn.ConnectionString = @"Data Source=ADMIN;Initial Catalog=homework;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
 
             conn.Open();
 
@@ -89,6 +89,19 @@ namespace WindowsFormsApp1
             }
             cmd.Dispose();
             cmd = null;
+        }
+        public static bool IsDate(string date)
+        {
+            string[] elements = date.Split('/');
+            if ((Convert.ToInt32(elements[0]) >= 1) && (Convert.ToInt32(elements[0]) <= 31) && (Convert.ToInt32(elements[1]) >= 1) && (Convert.ToInt32(elements[1]) <= 12) && (Convert.ToInt32(elements[2]) >= 1900))
+                return true;
+            else return false;
+        }
+        public static string ConvertDateTime(string date)
+        {
+            string[] elements = date.Split('/');
+            string dt = string.Format("{0}/{1}/{2}", elements[0], elements[1], elements[2]);
+            return dt;
         }
     }
 }

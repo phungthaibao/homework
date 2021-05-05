@@ -40,7 +40,6 @@ namespace WindowsFormsApp1
             this.txtAddressStaff = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.mtbPhoneStaff = new System.Windows.Forms.MaskedTextBox();
-            this.mskDateOfBirthStaff = new System.Windows.Forms.MaskedTextBox();
             this.chkSex = new System.Windows.Forms.CheckBox();
             this.dgvStaff = new System.Windows.Forms.DataGridView();
             this.btnAdd = new System.Windows.Forms.Button();
@@ -49,6 +48,7 @@ namespace WindowsFormsApp1
             this.btnSave = new System.Windows.Forms.Button();
             this.btnSkip = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
+            this.dtpDateOfBirthStaff = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStaff)).BeginInit();
             this.SuspendLayout();
             // 
@@ -146,17 +146,10 @@ namespace WindowsFormsApp1
             // 
             this.mtbPhoneStaff.Location = new System.Drawing.Point(628, 154);
             this.mtbPhoneStaff.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.mtbPhoneStaff.Mask = "9999-999-999";
             this.mtbPhoneStaff.Name = "mtbPhoneStaff";
             this.mtbPhoneStaff.Size = new System.Drawing.Size(346, 26);
             this.mtbPhoneStaff.TabIndex = 10;
-            // 
-            // mskDateOfBirthStaff
-            // 
-            this.mskDateOfBirthStaff.Location = new System.Drawing.Point(628, 232);
-            this.mskDateOfBirthStaff.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.mskDateOfBirthStaff.Name = "mskDateOfBirthStaff";
-            this.mskDateOfBirthStaff.Size = new System.Drawing.Size(346, 26);
-            this.mskDateOfBirthStaff.TabIndex = 11;
             // 
             // chkSex
             // 
@@ -201,6 +194,7 @@ namespace WindowsFormsApp1
             this.btnDelete.TabIndex = 15;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnModify
             // 
@@ -211,6 +205,7 @@ namespace WindowsFormsApp1
             this.btnModify.TabIndex = 16;
             this.btnModify.Text = "Modify";
             this.btnModify.UseVisualStyleBackColor = true;
+            this.btnModify.Click += new System.EventHandler(this.btnModify_Click);
             // 
             // btnSave
             // 
@@ -221,6 +216,7 @@ namespace WindowsFormsApp1
             this.btnSave.TabIndex = 17;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnSkip
             // 
@@ -231,6 +227,7 @@ namespace WindowsFormsApp1
             this.btnSkip.TabIndex = 18;
             this.btnSkip.Text = "Skip";
             this.btnSkip.UseVisualStyleBackColor = true;
+            this.btnSkip.Click += new System.EventHandler(this.btnSkip_Click);
             // 
             // btnClose
             // 
@@ -241,12 +238,22 @@ namespace WindowsFormsApp1
             this.btnClose.TabIndex = 19;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // dtpDateOfBirthStaff
+            // 
+            this.dtpDateOfBirthStaff.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDateOfBirthStaff.Location = new System.Drawing.Point(628, 231);
+            this.dtpDateOfBirthStaff.Name = "dtpDateOfBirthStaff";
+            this.dtpDateOfBirthStaff.Size = new System.Drawing.Size(346, 26);
+            this.dtpDateOfBirthStaff.TabIndex = 20;
             // 
             // frmStaff
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(993, 594);
+            this.Controls.Add(this.dtpDateOfBirthStaff);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnSkip);
             this.Controls.Add(this.btnSave);
@@ -255,7 +262,6 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.dgvStaff);
             this.Controls.Add(this.chkSex);
-            this.Controls.Add(this.mskDateOfBirthStaff);
             this.Controls.Add(this.mtbPhoneStaff);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtAddressStaff);
@@ -291,7 +297,6 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.TextBox txtAddressStaff;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.MaskedTextBox mtbPhoneStaff;
-        private System.Windows.Forms.MaskedTextBox mskDateOfBirthStaff;
         private System.Windows.Forms.CheckBox chkSex;
         private System.Windows.Forms.DataGridView dgvStaff;
         private System.Windows.Forms.Button btnAdd;
@@ -300,5 +305,6 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnSkip;
         private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.DateTimePicker dtpDateOfBirthStaff;
     }
 }

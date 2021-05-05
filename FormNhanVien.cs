@@ -71,7 +71,7 @@ namespace WindowsFormsApp1
 
             txtAddressStaff.Text = dgvStaff.CurrentRow.Cells["DiaChi"].Value.ToString();
             mtbPhoneStaff.Text = dgvStaff.CurrentRow.Cells["DienThoai"].Value.ToString();
-            mskDateOfBirthStaff.Text = dgvStaff.CurrentRow.Cells["NgaySinh"].Value.ToString();
+            dtpDateOfBirthStaff.Text = dgvStaff.CurrentRow.Cells["NgaySinh"].Value.ToString();
             btnModify.Enabled = true;
             btnDelete.Enabled = true;
         }
@@ -83,7 +83,7 @@ namespace WindowsFormsApp1
             btnModify.Enabled = false;
             btnSave.Enabled = true;
             btnSkip.Enabled = true;
-            
+
             ResetValues();
             txtIDStaff.Enabled = true;
             txtIDStaff.Focus();
@@ -95,8 +95,170 @@ namespace WindowsFormsApp1
             txtNameStaff.Text = "";
             chkSex.Checked = false;
             txtAddressStaff.Text = "";
-            mskDateOfBirthStaff.Text = "";
+            dtpDateOfBirthStaff.Text = "";
             mtbPhoneStaff.Text = "";
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            string sql, gt;
+            if (txtIDStaff.Text.Trim().Length == 0)
+            {
+                MessageBox.Show("Bạn phải nhập mã nhân viên", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtIDStaff.Focus();
+                return;
+            }
+            if (txtNameStaff.Text.Trim().Length == 0)
+            {
+                MessageBox.Show("Bạn phải nhập tên nhân viên", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtNameStaff.Focus();
+                return;
+            }
+            if (txtAddressStaff.Text.Trim().Length == 0)
+            {
+                MessageBox.Show("Bạn phải nhập địa chỉ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtAddressStaff.Focus();
+                return;
+            }
+            if (mtbPhoneStaff.Text == "(   )     -")
+            {
+                MessageBox.Show("Bạn phải nhập điện thoại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                mtbPhoneStaff.Focus();
+                return;
+            }
+            if (dtpDateOfBirthStaff.Text == "  /  /")
+            {
+                MessageBox.Show("Bạn phải nhập ngày sinh", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                dtpDateOfBirthStaff.Focus();
+                return;
+            }
+            if (!Functions.IsDate(dtpDateOfBirthStaff.Text))
+            {
+                MessageBox.Show("Bạn phải nhập lại ngày sinh", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                // mskNgaySinh.Text = "";
+                dtpDateOfBirthStaff.Focus();
+                return;
+            }
+            if (chkSex.Checked == true)
+                gt = "Nam";
+            else
+                gt = "Nữ";
+            sql = "SELECT MaNhanVien FROM tblNhanVien WHERE MaNhanVien=N'" + txtIDStaff.Text.Trim() + "'";
+            if (Functions.CheckKey(sql))
+            {
+                MessageBox.Show("Mã nhân viên này đã có, bạn phải nhập mã khác", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtIDStaff.Focus();
+                txtIDStaff.Text = "";
+                return;
+            }
+            sql = "INSERT INTO tblNhanVien(MaNhanVien,TenNhanVien,GioiTinh, DiaChi,DienThoai, NgaySinh) VALUES (N'" + txtIDStaff.Text.Trim() + "',N'" + txtNameStaff.Text.Trim() + "',N'" + gt + "',N'" + txtAddressStaff.Text.Trim() + "','" + mtbPhoneStaff.Text + "','" + Functions.ConvertDateTime(dtpDateOfBirthStaff.Text) + "')";
+            Functions.RunSQL(sql);
+            LoadDataGridView();
+            ResetValues();
+
+            btnAdd.Enabled = true;
+            btnDelete.Enabled = true;
+            btnModify.Enabled = true;
+            btnSave.Enabled = false;
+            btnSkip.Enabled = false;
+            txtIDStaff.Enabled = false;
+        }
+
+        private void btnModify_Click(object sender, EventArgs e)
+        {
+            string sql, gt;
+            if (tblNV.Rows.Count == 0)
+            {
+                MessageBox.Show("Không còn dữ liệu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            if (txtIDStaff.Text == "")
+            {
+                MessageBox.Show("Bạn chưa chọn bản ghi nào", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            if (txtNameStaff.Text.Trim().Length == 0)
+            {
+                MessageBox.Show("Bạn phải nhập tên nhân viên", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtNameStaff.Focus();
+                return;
+            }
+            if (txtAddressStaff.Text.Trim().Length == 0)
+            {
+                MessageBox.Show("Bạn phải nhập địa chỉ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtAddressStaff.Focus();
+                return;
+            }
+            if (mtbPhoneStaff.Text == "(   )     -")
+            {
+                MessageBox.Show("Bạn phải nhập điện thoại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                mtbPhoneStaff.Focus();
+                return;
+            }
+            if (dtpDateOfBirthStaff.Text == "  /  /")
+            {
+                MessageBox.Show("Bạn phải nhập ngày sinh", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                dtpDateOfBirthStaff.Focus();
+                return;
+            }
+            if (!Functions.IsDate(dtpDateOfBirthStaff.Text))
+            {
+                MessageBox.Show("Bạn phải nhập lại ngày sinh", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                dtpDateOfBirthStaff.Text = "";
+                dtpDateOfBirthStaff.Focus();
+                return;
+            }
+            if (chkSex.Checked == true)
+                gt = "Nam";
+            else
+                gt = "Nữ";
+            sql = "UPDATE tblNhanVien SET  TenNhanVien=N'" + txtNameStaff.Text.Trim().ToString() +
+                    "',DiaChi=N'" + txtAddressStaff.Text.Trim().ToString() +
+                    "',DienThoai='" + mtbPhoneStaff.Text.ToString() + "',GioiTinh=N'" + gt +
+                    "',NgaySinh='" + Functions.ConvertDateTime(dtpDateOfBirthStaff.Text) +
+                    "' WHERE MaNhanVien=N'" + txtIDStaff.Text + "'";
+            Functions.RunSQL(sql);
+            LoadDataGridView();
+            ResetValues();
+            btnSkip.Enabled = false;
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            string sql;
+            if (tblNV.Rows.Count == 0)
+            {
+                MessageBox.Show("Không còn dữ liệu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            if (txtIDStaff.Text == "")
+            {
+                MessageBox.Show("Bạn chưa chọn bản ghi nào", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            if (MessageBox.Show("Bạn có muốn xóa không?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+            {
+                sql = "DELETE tblNhanVien WHERE MaNhanVien=N'" + txtIDStaff.Text + "'";
+                Functions.RunSqlDel(sql);
+                LoadDataGridView();
+                ResetValues();
+            }
+        }
+
+        private void btnSkip_Click(object sender, EventArgs e)
+        {
+            ResetValues();
+            btnSkip.Enabled = false;
+            btnAdd.Enabled = true;
+            btnDelete.Enabled = true;
+            btnModify.Enabled = true;
+            btnSave.Enabled = false;
+            txtIDStaff.Enabled = false;
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

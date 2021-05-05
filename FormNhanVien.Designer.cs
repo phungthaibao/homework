@@ -40,15 +40,15 @@ namespace WindowsFormsApp1
             this.txtAddressStaff = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.mtbPhoneStaff = new System.Windows.Forms.MaskedTextBox();
-            this.mtbDateOfBirthStaff = new System.Windows.Forms.MaskedTextBox();
+            this.mskDateOfBirthStaff = new System.Windows.Forms.MaskedTextBox();
             this.chkSex = new System.Windows.Forms.CheckBox();
             this.dgvStaff = new System.Windows.Forms.DataGridView();
-            this.buttonAdd = new System.Windows.Forms.Button();
-            this.buttonDelete = new System.Windows.Forms.Button();
-            this.buttonModify = new System.Windows.Forms.Button();
-            this.buttonSave = new System.Windows.Forms.Button();
-            this.buttonSkip = new System.Windows.Forms.Button();
-            this.buttonClose = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnModify = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.btnSkip = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStaff)).BeginInit();
             this.SuspendLayout();
             // 
@@ -150,13 +150,13 @@ namespace WindowsFormsApp1
             this.mtbPhoneStaff.Size = new System.Drawing.Size(346, 26);
             this.mtbPhoneStaff.TabIndex = 10;
             // 
-            // mtbDateOfBirthStaff
+            // mskDateOfBirthStaff
             // 
-            this.mtbDateOfBirthStaff.Location = new System.Drawing.Point(628, 232);
-            this.mtbDateOfBirthStaff.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.mtbDateOfBirthStaff.Name = "mtbDateOfBirthStaff";
-            this.mtbDateOfBirthStaff.Size = new System.Drawing.Size(346, 26);
-            this.mtbDateOfBirthStaff.TabIndex = 11;
+            this.mskDateOfBirthStaff.Location = new System.Drawing.Point(628, 232);
+            this.mskDateOfBirthStaff.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.mskDateOfBirthStaff.Name = "mskDateOfBirthStaff";
+            this.mskDateOfBirthStaff.Size = new System.Drawing.Size(346, 26);
+            this.mskDateOfBirthStaff.TabIndex = 11;
             // 
             // chkSex
             // 
@@ -179,81 +179,83 @@ namespace WindowsFormsApp1
             this.dgvStaff.RowTemplate.Height = 24;
             this.dgvStaff.Size = new System.Drawing.Size(957, 175);
             this.dgvStaff.TabIndex = 13;
+            this.dgvStaff.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStaff_Click);
             // 
-            // buttonAdd
+            // btnAdd
             // 
-            this.buttonAdd.Location = new System.Drawing.Point(17, 496);
-            this.buttonAdd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(96, 56);
-            this.buttonAdd.TabIndex = 14;
-            this.buttonAdd.Text = "Add";
-            this.buttonAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Location = new System.Drawing.Point(17, 496);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(96, 56);
+            this.btnAdd.TabIndex = 14;
+            this.btnAdd.Text = "Add";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // buttonDelete
+            // btnDelete
             // 
-            this.buttonDelete.Location = new System.Drawing.Point(194, 496);
-            this.buttonDelete.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.buttonDelete.Name = "buttonDelete";
-            this.buttonDelete.Size = new System.Drawing.Size(96, 56);
-            this.buttonDelete.TabIndex = 15;
-            this.buttonDelete.Text = "Delete";
-            this.buttonDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Location = new System.Drawing.Point(194, 496);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(96, 56);
+            this.btnDelete.TabIndex = 15;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = true;
             // 
-            // buttonModify
+            // btnModify
             // 
-            this.buttonModify.Location = new System.Drawing.Point(372, 496);
-            this.buttonModify.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.buttonModify.Name = "buttonModify";
-            this.buttonModify.Size = new System.Drawing.Size(96, 56);
-            this.buttonModify.TabIndex = 16;
-            this.buttonModify.Text = "Modify";
-            this.buttonModify.UseVisualStyleBackColor = true;
+            this.btnModify.Location = new System.Drawing.Point(372, 496);
+            this.btnModify.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnModify.Name = "btnModify";
+            this.btnModify.Size = new System.Drawing.Size(96, 56);
+            this.btnModify.TabIndex = 16;
+            this.btnModify.Text = "Modify";
+            this.btnModify.UseVisualStyleBackColor = true;
             // 
-            // buttonSave
+            // btnSave
             // 
-            this.buttonSave.Location = new System.Drawing.Point(543, 496);
-            this.buttonSave.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.buttonSave.Name = "buttonSave";
-            this.buttonSave.Size = new System.Drawing.Size(96, 56);
-            this.buttonSave.TabIndex = 17;
-            this.buttonSave.Text = "Save";
-            this.buttonSave.UseVisualStyleBackColor = true;
+            this.btnSave.Location = new System.Drawing.Point(543, 496);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(96, 56);
+            this.btnSave.TabIndex = 17;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
             // 
-            // buttonSkip
+            // btnSkip
             // 
-            this.buttonSkip.Location = new System.Drawing.Point(718, 496);
-            this.buttonSkip.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.buttonSkip.Name = "buttonSkip";
-            this.buttonSkip.Size = new System.Drawing.Size(96, 56);
-            this.buttonSkip.TabIndex = 18;
-            this.buttonSkip.Text = "Skip";
-            this.buttonSkip.UseVisualStyleBackColor = true;
+            this.btnSkip.Location = new System.Drawing.Point(718, 496);
+            this.btnSkip.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnSkip.Name = "btnSkip";
+            this.btnSkip.Size = new System.Drawing.Size(96, 56);
+            this.btnSkip.TabIndex = 18;
+            this.btnSkip.Text = "Skip";
+            this.btnSkip.UseVisualStyleBackColor = true;
             // 
-            // buttonClose
+            // btnClose
             // 
-            this.buttonClose.Location = new System.Drawing.Point(879, 496);
-            this.buttonClose.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.buttonClose.Name = "buttonClose";
-            this.buttonClose.Size = new System.Drawing.Size(96, 56);
-            this.buttonClose.TabIndex = 19;
-            this.buttonClose.Text = "Close";
-            this.buttonClose.UseVisualStyleBackColor = true;
+            this.btnClose.Location = new System.Drawing.Point(879, 496);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(96, 56);
+            this.btnClose.TabIndex = 19;
+            this.btnClose.Text = "Close";
+            this.btnClose.UseVisualStyleBackColor = true;
             // 
             // frmStaff
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(993, 594);
-            this.Controls.Add(this.buttonClose);
-            this.Controls.Add(this.buttonSkip);
-            this.Controls.Add(this.buttonSave);
-            this.Controls.Add(this.buttonModify);
-            this.Controls.Add(this.buttonDelete);
-            this.Controls.Add(this.buttonAdd);
+            this.Controls.Add(this.btnClose);
+            this.Controls.Add(this.btnSkip);
+            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.btnModify);
+            this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.dgvStaff);
             this.Controls.Add(this.chkSex);
-            this.Controls.Add(this.mtbDateOfBirthStaff);
+            this.Controls.Add(this.mskDateOfBirthStaff);
             this.Controls.Add(this.mtbPhoneStaff);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtAddressStaff);
@@ -267,7 +269,9 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmStaff";
-            this.Text = "List Staff";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = " ";
+            this.Load += new System.EventHandler(this.frmStaff_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvStaff)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -287,14 +291,14 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.TextBox txtAddressStaff;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.MaskedTextBox mtbPhoneStaff;
-        private System.Windows.Forms.MaskedTextBox mtbDateOfBirthStaff;
+        private System.Windows.Forms.MaskedTextBox mskDateOfBirthStaff;
         private System.Windows.Forms.CheckBox chkSex;
         private System.Windows.Forms.DataGridView dgvStaff;
-        private System.Windows.Forms.Button buttonAdd;
-        private System.Windows.Forms.Button buttonDelete;
-        private System.Windows.Forms.Button buttonModify;
-        private System.Windows.Forms.Button buttonSave;
-        private System.Windows.Forms.Button buttonSkip;
-        private System.Windows.Forms.Button buttonClose;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnModify;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button btnSkip;
+        private System.Windows.Forms.Button btnClose;
     }
 }

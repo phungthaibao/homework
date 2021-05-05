@@ -17,7 +17,7 @@ namespace WindowsFormsApp1
         public static void Connect()
         {
             conn = new SqlConnection();
-            conn.ConnectionString = @"";//them PATH ket noi database
+            conn.ConnectionString = @"Data Source=ADMIN;Initial Catalog=homework;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";//them PATH ket noi database
 
             conn.Open();
 
@@ -30,19 +30,19 @@ namespace WindowsFormsApp1
         {
             if (conn.State == ConnectionState.Open)
             {
-                conn.Close(); // close connect
-                conn.Dispose(); // giai phong tai nguyen
+                conn.Close();
+                conn.Dispose();
                 conn = null;
             }
         }
         public static DataTable GetDataToTable(string sql)
         {
-            SqlDataAdapter dap = new SqlDataAdapter(); //Định nghĩa đối tượng thuộc lớp SqlDataAdapter
-            //Tạo đối tượng thuộc lớp SqlCommand
+            SqlDataAdapter dap = new SqlDataAdapter(); 
+            
             dap.SelectCommand = new SqlCommand();
-            dap.SelectCommand.Connection = Functions.conn; //Kết nối cơ sở dữ liệu
-            dap.SelectCommand.CommandText = sql; //Lệnh SQL
-            //Khai báo đối tượng table thuộc lớp DataTable
+            dap.SelectCommand.Connection = Functions.conn;
+            dap.SelectCommand.CommandText = sql;
+            
             DataTable table = new DataTable();
             dap.Fill(table);
             return table;
@@ -54,7 +54,6 @@ namespace WindowsFormsApp1
             if (table.Rows.Count > 0)
                 return true;
             else return false;
-
         }
         public static void RunSQL(string sql)
         {
@@ -70,6 +69,23 @@ namespace WindowsFormsApp1
             {
                 MessageBox.Show(ex.ToString());
 
+            }
+            cmd.Dispose();
+            cmd = null;
+        }
+        public static void RunSqlDel(string sql)
+        {
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = Functions.conn;
+            cmd.CommandText = sql;
+            try
+            {
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                
+                MessageBox.Show(ex.ToString());
             }
             cmd.Dispose();
             cmd = null;

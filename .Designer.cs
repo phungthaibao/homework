@@ -48,7 +48,7 @@ namespace WindowsFormsApp1
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(3, 3);
+            this.btnAdd.Location = new System.Drawing.Point(3, 13);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(96, 55);
             this.btnAdd.TabIndex = 0;
@@ -58,16 +58,17 @@ namespace WindowsFormsApp1
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(136, 3);
+            this.btnDelete.Location = new System.Drawing.Point(127, 13);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(96, 55);
             this.btnDelete.TabIndex = 1;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnModify
             // 
-            this.btnModify.Location = new System.Drawing.Point(266, 3);
+            this.btnModify.Location = new System.Drawing.Point(261, 13);
             this.btnModify.Name = "btnModify";
             this.btnModify.Size = new System.Drawing.Size(96, 55);
             this.btnModify.TabIndex = 2;
@@ -77,7 +78,7 @@ namespace WindowsFormsApp1
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(412, 3);
+            this.btnSave.Location = new System.Drawing.Point(402, 13);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(96, 55);
             this.btnSave.TabIndex = 3;
@@ -87,21 +88,23 @@ namespace WindowsFormsApp1
             // 
             // btnSkip
             // 
-            this.btnSkip.Location = new System.Drawing.Point(559, 3);
+            this.btnSkip.Location = new System.Drawing.Point(545, 13);
             this.btnSkip.Name = "btnSkip";
             this.btnSkip.Size = new System.Drawing.Size(96, 55);
             this.btnSkip.TabIndex = 4;
             this.btnSkip.Text = "Skip";
             this.btnSkip.UseVisualStyleBackColor = true;
+            this.btnSkip.Click += new System.EventHandler(this.btnSkip_Click);
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(692, 3);
+            this.btnClose.Location = new System.Drawing.Point(692, 13);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(96, 55);
             this.btnClose.TabIndex = 5;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // label1
             // 
@@ -138,14 +141,14 @@ namespace WindowsFormsApp1
             // 
             this.txtNameMaterial.Location = new System.Drawing.Point(136, 117);
             this.txtNameMaterial.Name = "txtNameMaterial";
-            this.txtNameMaterial.Size = new System.Drawing.Size(198, 26);
+            this.txtNameMaterial.Size = new System.Drawing.Size(362, 26);
             this.txtNameMaterial.TabIndex = 9;
             // 
             // txtIDMaterial
             // 
             this.txtIDMaterial.Location = new System.Drawing.Point(136, 77);
             this.txtIDMaterial.Name = "txtIDMaterial";
-            this.txtIDMaterial.Size = new System.Drawing.Size(198, 26);
+            this.txtIDMaterial.Size = new System.Drawing.Size(362, 26);
             this.txtIDMaterial.TabIndex = 10;
             // 
             // dgvMaterial
@@ -167,9 +170,9 @@ namespace WindowsFormsApp1
             this.panel1.Controls.Add(this.btnSkip);
             this.panel1.Controls.Add(this.btnClose);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 381);
+            this.panel1.Location = new System.Drawing.Point(0, 369);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(800, 68);
+            this.panel1.Size = new System.Drawing.Size(800, 80);
             this.panel1.TabIndex = 12;
             // 
             // frmMaterial
@@ -185,6 +188,7 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.labelName);
             this.Controls.Add(this.label1);
             this.Name = "frmMaterial";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Danh mục chất liệu";
             this.Load += new System.EventHandler(this.frmMaterial_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMaterial)).EndInit();

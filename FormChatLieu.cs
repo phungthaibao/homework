@@ -16,7 +16,7 @@ namespace WindowsFormsApp1
 {
     public partial class frmMaterial : Form
     {
-        DataTable tblCL; 
+        DataTable tblCL;
         public frmMaterial()
         {
             InitializeComponent();
@@ -27,7 +27,7 @@ namespace WindowsFormsApp1
             txtIDMaterial.Enabled = false;
             btnSave.Enabled = false;
             btnSkip.Enabled = false;
-            LoadDataGirdView();//Hiển thị bảng tblChatLieu
+            LoadDataGirdView();
         }
 
         private void LoadDataGirdView()
@@ -40,8 +40,8 @@ namespace WindowsFormsApp1
             dgvMaterial.Columns[1].HeaderText = "Mã chất liệu";
             dgvMaterial.Columns[0].Width = 100;
             dgvMaterial.Columns[1].Width = 300;
-            dgvMaterial.AllowUserToAddRows = false; //Không cho người dùng thêm dữ liệu trực tiếp
-            dgvMaterial.EditMode = DataGridViewEditMode.EditProgrammatically; //Không cho sửa dữ liệu trực tiếp
+            dgvMaterial.AllowUserToAddRows = false;
+            dgvMaterial.EditMode = DataGridViewEditMode.EditProgrammatically;
         }
 
         private void dgvChatLieu_Click(object sender, EventArgs e)
@@ -52,7 +52,7 @@ namespace WindowsFormsApp1
                 txtIDMaterial.Focus();
                 return;
             }
-            if (tblCL.Rows.Count == 0) //Nếu không có dữ liệu
+            if (tblCL.Rows.Count == 0)
             {
                 MessageBox.Show("Không có dữ liệu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
@@ -64,7 +64,7 @@ namespace WindowsFormsApp1
             btnSkip.Enabled = true;
         }
 
-        
+
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
@@ -146,5 +146,45 @@ namespace WindowsFormsApp1
 
             btnSkip.Enabled = false;
         }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            string sql;
+            if (tblCL.Rows.Count == 0)
+            {
+                MessageBox.Show("Không còn dữ liệu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            if (txtIDMaterial.Text == "") //nếu chưa chọn bản ghi nào
+            {
+                MessageBox.Show("Bạn chưa chọn bản ghi nào", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            if (MessageBox.Show("Bạn có muốn xoá không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                sql = "DELETE tblChatLieu WHERE MaChatLieu=N'" + txtIDMaterial.Text + "'";
+                Functions.RunSqlDel(sql);
+                LoadDataGirdView();
+                ResetValue();
+            }
+        }
+
+        private void btnSkip_Click(object sender, EventArgs e)
+        {
+            ResetValue();
+            btnSkip.Enabled = false;
+            btnAdd.Enabled = true;
+            btnDelete.Enabled = true;
+            btnModify.Enabled = true;
+            btnSave.Enabled = false;
+            txtIDMaterial.Enabled = false;
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+       
     }
 }

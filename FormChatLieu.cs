@@ -8,7 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient; // SQL server
-using WindowsFormsApp1; // class Functions.cs
+using System.Data;
+using WindowsFormsApp1.Class; // class Functions.cs
 
 
 namespace WindowsFormsApp1
@@ -33,10 +34,10 @@ namespace WindowsFormsApp1
         {
             string sql;
             sql = "select * MaChatLieu, TenChatLieu from tblChatLieu";
-            tblCL = Functions.GetDataToTable(sql);
+            tblCL = Class.Functions.GetDataToTable(sql);
             dgvMaterial.DataSource = tblCL;
             dgvMaterial.Columns[0].HeaderText = "Mã chất liệu";
-            dgvMaterial.Columns[1].HeaderText = "Mã chất liệu";
+            dgvMaterial.Columns[1].HeaderText = "Tên chất liệu";
             dgvMaterial.Columns[0].Width = 100;
             dgvMaterial.Columns[1].Width = 300;
             dgvMaterial.AllowUserToAddRows = false;

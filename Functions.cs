@@ -8,7 +8,7 @@ using System.Data.SqlClient;
 using System.Windows.Forms;
 
 
-namespace WindowsFormsApp1
+namespace WindowsFormsApp1.Class
 {
     class Functions
     {
@@ -37,12 +37,8 @@ namespace WindowsFormsApp1
         }
         public static DataTable GetDataToTable(string sql)
         {
-            SqlDataAdapter dap = new SqlDataAdapter(); 
-            
-            dap.SelectCommand = new SqlCommand();
-            dap.SelectCommand.Connection = Functions.conn;
-            dap.SelectCommand.CommandText = sql;
-            
+            SqlDataAdapter dap = new SqlDataAdapter(sql, conn);
+            //Khai báo đối tượng table thuộc lớp DataTable
             DataTable table = new DataTable();
             dap.Fill(table);
             return table;

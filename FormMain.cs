@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp1.Class;
 
 namespace WindowsFormsApp1
 {
@@ -19,14 +20,14 @@ namespace WindowsFormsApp1
 
         private void frmMain_Load(object sender, EventArgs e)
         {
-            Functions.Connect();
+            Class.Functions.Connect();
         }
         
 
         private void mnuExit_Click(object sender, EventArgs e)
         {
             //Đóng kết nối database
-            Functions.Disconnect();
+            Class.Functions.Disconnect();
             Application.Exit();
         }
 
@@ -51,7 +52,8 @@ namespace WindowsFormsApp1
         private void mnuGoods_Click(object sender, EventArgs e)
         {
             frmGoods frmG = new frmGoods();
-            frmG.ShowDialog(); // .Show(); dang thong thuong
+            frmG.MdiParent = this;
+            frmG.Show(); // .Show(); dang thong thuong
         }
 
     }

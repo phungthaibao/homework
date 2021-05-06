@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-using WindowsFormsApp1;
+using WindowsFormsApp1.Class;
 
 
 namespace WindowsFormsApp1
@@ -32,7 +32,7 @@ namespace WindowsFormsApp1
         {
             string sql;
             sql = "SELECT MaNhanVien,TenNhanVien,GioiTinh,DiaChi,DienThoai,NgaySinh FROM tblNhanVien";
-            tblNV = Functions.GetDataToTable(sql);
+            tblNV = Class.Functions.GetDataToTable(sql);
             dgvStaff.DataSource = tblNV;
             dgvStaff.Columns[0].HeaderText = "Mã nhân viên";
             dgvStaff.Columns[1].HeaderText = "Tên nhân viên";
@@ -76,6 +76,17 @@ namespace WindowsFormsApp1
             btnDelete.Enabled = true;
         }
 
+        
+
+        private void ResetValues()
+        {
+            txtIDStaff.Text = "";
+            txtNameStaff.Text = "";
+            chkSex.Checked = false;
+            txtAddressStaff.Text = "";
+            dtpDateOfBirthStaff.Text = "";
+            mtbPhoneStaff.Text = "";
+        }
         private void btnAdd_Click(object sender, EventArgs e)
         {
             btnAdd.Enabled = false;
@@ -88,17 +99,6 @@ namespace WindowsFormsApp1
             txtIDStaff.Enabled = true;
             txtIDStaff.Focus();
         }
-
-        private void ResetValues()
-        {
-            txtIDStaff.Text = "";
-            txtNameStaff.Text = "";
-            chkSex.Checked = false;
-            txtAddressStaff.Text = "";
-            dtpDateOfBirthStaff.Text = "";
-            mtbPhoneStaff.Text = "";
-        }
-
         private void btnSave_Click(object sender, EventArgs e)
         {
             string sql, gt;
@@ -135,7 +135,7 @@ namespace WindowsFormsApp1
             if (!Functions.IsDate(dtpDateOfBirthStaff.Text))
             {
                 MessageBox.Show("Bạn phải nhập lại ngày sinh", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                // mskNgaySinh.Text = "";
+                
                 dtpDateOfBirthStaff.Focus();
                 return;
             }
@@ -189,13 +189,13 @@ namespace WindowsFormsApp1
                 txtAddressStaff.Focus();
                 return;
             }
-            if (mtbPhoneStaff.Text == "(   )     -")
+            if (mtbPhoneStaff.Text == "    -   -   ")
             {
                 MessageBox.Show("Bạn phải nhập điện thoại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 mtbPhoneStaff.Focus();
                 return;
             }
-            if (dtpDateOfBirthStaff.Text == "  /  /")
+            if (dtpDateOfBirthStaff.Text == "  /  / ")
             {
                 MessageBox.Show("Bạn phải nhập ngày sinh", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 dtpDateOfBirthStaff.Focus();

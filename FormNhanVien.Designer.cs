@@ -49,7 +49,9 @@ namespace WindowsFormsApp1
             this.btnSkip = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.dtpDateOfBirthStaff = new System.Windows.Forms.DateTimePicker();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStaff)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -176,7 +178,7 @@ namespace WindowsFormsApp1
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(17, 496);
+            this.btnAdd.Location = new System.Drawing.Point(2, 12);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(96, 56);
@@ -187,7 +189,7 @@ namespace WindowsFormsApp1
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(194, 496);
+            this.btnDelete.Location = new System.Drawing.Point(179, 12);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(96, 56);
@@ -198,7 +200,7 @@ namespace WindowsFormsApp1
             // 
             // btnModify
             // 
-            this.btnModify.Location = new System.Drawing.Point(372, 496);
+            this.btnModify.Location = new System.Drawing.Point(357, 12);
             this.btnModify.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnModify.Name = "btnModify";
             this.btnModify.Size = new System.Drawing.Size(96, 56);
@@ -209,7 +211,7 @@ namespace WindowsFormsApp1
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(543, 496);
+            this.btnSave.Location = new System.Drawing.Point(528, 12);
             this.btnSave.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(96, 56);
@@ -220,7 +222,7 @@ namespace WindowsFormsApp1
             // 
             // btnSkip
             // 
-            this.btnSkip.Location = new System.Drawing.Point(718, 496);
+            this.btnSkip.Location = new System.Drawing.Point(703, 12);
             this.btnSkip.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSkip.Name = "btnSkip";
             this.btnSkip.Size = new System.Drawing.Size(96, 56);
@@ -231,7 +233,7 @@ namespace WindowsFormsApp1
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(879, 496);
+            this.btnClose.Location = new System.Drawing.Point(864, 12);
             this.btnClose.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(96, 56);
@@ -248,18 +250,26 @@ namespace WindowsFormsApp1
             this.dtpDateOfBirthStaff.Size = new System.Drawing.Size(346, 26);
             this.dtpDateOfBirthStaff.TabIndex = 20;
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.btnClose);
+            this.panel1.Controls.Add(this.btnSkip);
+            this.panel1.Controls.Add(this.btnSave);
+            this.panel1.Controls.Add(this.btnModify);
+            this.panel1.Controls.Add(this.btnDelete);
+            this.panel1.Controls.Add(this.btnAdd);
+            this.panel1.Location = new System.Drawing.Point(15, 484);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(970, 86);
+            this.panel1.TabIndex = 21;
+            // 
             // frmStaff
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(993, 594);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.dtpDateOfBirthStaff);
-            this.Controls.Add(this.btnClose);
-            this.Controls.Add(this.btnSkip);
-            this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.btnModify);
-            this.Controls.Add(this.btnDelete);
-            this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.dgvStaff);
             this.Controls.Add(this.chkSex);
             this.Controls.Add(this.mtbPhoneStaff);
@@ -279,6 +289,7 @@ namespace WindowsFormsApp1
             this.Text = " ";
             this.Load += new System.EventHandler(this.frmStaff_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvStaff)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -306,5 +317,6 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Button btnSkip;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.DateTimePicker dtpDateOfBirthStaff;
+        private System.Windows.Forms.Panel panel1;
     }
 }

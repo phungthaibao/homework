@@ -68,5 +68,159 @@ namespace WindowsFormsApp1
             btnDelete.Enabled = true;
             btnSkip.Enabled = true;
         }
+
+        private void btnAdd_Click_1(object sender, EventArgs e)
+        {
+            btnModify.Enabled = false;
+            btnDelete.Enabled = false;
+            btnSkip.Enabled = true;
+            btnSave.Enabled = true;
+            btnAdd.Enabled = false;
+            ResetValues();
+            txtIDCustomer.Enabled = true;
+            txtIDCustomer.Focus();
+        }
+        private void ResetValues()
+        {
+            txtIDCustomer.Text = "";
+            txtNameCustomer.Text = "";
+            txtAddressCustomer.Text = "";
+            mtbPhoneCustomer.Text = "";
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            string sql;
+            if (txtIDCustomer.Text.Trim().Length == 0)
+            {
+                MessageBox.Show("Bạn phải nhập mã khách", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtIDCustomer.Focus();
+                return;
+            }
+            if (txtNameCustomer.Text.Trim().Length == 0)
+            {
+                MessageBox.Show("Bạn phải nhập tên khách", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtNameCustomer.Focus();
+                return;
+            }
+            if (txtAddressCustomer.Text.Trim().Length == 0)
+            {
+                MessageBox.Show("Bạn phải nhập địa chỉ", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtAddressCustomer.Focus();
+                return;
+            }
+            if (mtbPhoneCustomer.Text == "    -   -   ")
+            {
+                MessageBox.Show("Bạn phải nhập điện thoại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                mtbPhoneCustomer.Focus();
+                return;
+            }
+            //Kiểm tra đã tồn tại mã khách chưa
+            sql = "SELECT MaKhach FROM tblKhachHang WHERE MaKhach=N'" + txtIDCustomer.Text.Trim() + "'";
+            if (Functions.CheckKey(sql))
+            {
+                MessageBox.Show("Mã khách này đã tồn tại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtIDCustomer.Focus();
+                return;
+            }
+            //Chèn thêm
+            sql = "INSERT INTO tblKhach VALUES (N'" + txtIDCustomer.Text.Trim() +
+                "',N'" + txtNameCustomer.Text.Trim() + "',N'" + txtAddressCustomer.Text.Trim() + "','" + mtbPhoneCustomer.Text + "')";
+            Functions.RunSQL(sql);
+            LoadDataGridView();
+            ResetValues();
+
+            btnDelete.Enabled = true;
+            btnAdd.Enabled = true;
+            btnModify.Enabled = true;
+            btnSkip.Enabled = false;
+            btnSave.Enabled = false;
+            txtIDCustomer.Enabled = false;
+        }
+        
+
+
+        
+        private void btnModify_Click(object sender, EventArgs e)
+        {
+            string sql;
+            if (tblKH.Rows.Count == 0)
+            {
+                MessageBox.Show("Không còn dữ liệu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            if (txtIDCustomer.Text == "")
+            {
+                MessageBox.Show("Bạn phải chọn bản ghi cần sửa", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            if (txtNameCustomer.Text.Trim().Length == 0)
+            {
+                MessageBox.Show("Bạn phải nhập tên khách", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtNameCustomer.Focus();
+                return;
+            }
+            if (txtAddressCustomer.Text.Trim().Length == 0)
+            {
+                MessageBox.Show("Bạn phải nhập địa chỉ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtAddressCustomer.Focus();
+                return;
+            }
+            if (mtbPhoneCustomer.Text == "(  )    -")
+            {
+                MessageBox.Show("Bạn phải nhập điện thoại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                mtbPhoneCustomer.Focus();
+                return;
+            }
+            sql = "UPDATE tblKhachHang SET TenKhach=N'" + txtNameCustomer.Text.Trim().ToString() + "',DiaChi=N'" +
+                txtAddressCustomer.Text.Trim().ToString() + "',DienThoai='" + mtbPhoneCustomer.Text.ToString() +
+                "' WHERE MaKhach=N'" + txtIDCustomer.Text + "'";
+            Class.Functions.RunSQL(sql);
+            LoadDataGridView();
+            ResetValues();
+            btnSkip.Enabled = false;
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            string sql;
+            if (tblKH.Rows.Count == 0)
+            {
+                MessageBox.Show("Không còn dữ liệu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            if (txtIDCustomer.Text.Trim() == "")
+            {
+                MessageBox.Show("Bạn chưa chọn bản ghi nào", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            if (MessageBox.Show("Bạn có muốn xoá bản ghi này không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                sql = "DELETE tblKhach WHERE MaKhach=N'" + txtIDCustomer.Text + "'";
+                Functions.RunSqlDel(sql);
+                LoadDataGridView();
+                ResetValues();
+            }
+        }
+
+        private void btnSkip_Click(object sender, EventArgs e)
+        {
+            ResetValues();
+            btnSkip.Enabled = false;
+            btnAdd.Enabled = true;
+            btnDelete.Enabled = true;
+            btnModify.Enabled = true;
+            btnSave.Enabled = false;
+            txtIDCustomer.Enabled = false;
+
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+
+        
     }
 }

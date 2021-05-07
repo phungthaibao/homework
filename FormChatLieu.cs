@@ -7,9 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient; // SQL server
+using System.Data.SqlClient;
 using System.Data;
-using WindowsFormsApp1.Class; // class Functions.cs
+using WindowsFormsApp1.Class;
 
 
 namespace WindowsFormsApp1

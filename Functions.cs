@@ -99,5 +99,21 @@ namespace WindowsFormsApp1.Class
             string dt = string.Format("{0}/{1}/{2}", elements[0], elements[1], elements[2]);
             return dt;
         }
+
+        public static void FillCombo(string sql, ComboBox cbo, string ma, string ten)
+        {
+            SqlDataAdapter dap = new SqlDataAdapter(sql, conn);
+            DataTable table = new DataTable();
+            dap.Fill(table);
+            cbo.DataSource = table;
+            cbo.ValueMember = ma; //Trường giá trị
+            cbo.DisplayMember = ten; //Trường hiển thị
+        }
+
+
+
+
+
+
     }
 }

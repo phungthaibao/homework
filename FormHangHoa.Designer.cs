@@ -168,9 +168,9 @@ namespace WindowsFormsApp1
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.label1.Location = new System.Drawing.Point(108, 38);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(71, 20);
+            this.label1.Size = new System.Drawing.Size(40, 20);
             this.label1.TabIndex = 31;
-            this.label1.Text = "Ma hang";
+            this.label1.Text = "PLU";
             // 
             // label2
             // 
@@ -178,9 +178,9 @@ namespace WindowsFormsApp1
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.label2.Location = new System.Drawing.Point(732, 123);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(64, 20);
+            this.label2.Size = new System.Drawing.Size(43, 20);
             this.label2.TabIndex = 32;
-            this.label2.Text = "Ghi chu";
+            this.label2.Text = "Note";
             // 
             // label3
             // 
@@ -188,9 +188,9 @@ namespace WindowsFormsApp1
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.label3.Location = new System.Drawing.Point(108, 234);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(95, 20);
+            this.label3.Size = new System.Drawing.Size(124, 20);
             this.label3.TabIndex = 33;
-            this.label3.Text = "Don gia ban";
+            this.label3.Text = "Unit selling price";
             // 
             // label4
             // 
@@ -198,9 +198,9 @@ namespace WindowsFormsApp1
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.label4.Location = new System.Drawing.Point(108, 192);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(104, 20);
+            this.label4.Size = new System.Drawing.Size(123, 20);
             this.label4.TabIndex = 34;
-            this.label4.Text = "Don gia nhap";
+            this.label4.Text = "Import unit price";
             // 
             // label5
             // 
@@ -208,9 +208,9 @@ namespace WindowsFormsApp1
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.label5.Location = new System.Drawing.Point(108, 148);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(72, 20);
+            this.label5.Size = new System.Drawing.Size(65, 20);
             this.label5.TabIndex = 35;
-            this.label5.Text = "So luong";
+            this.label5.Text = "Amount";
             // 
             // label6
             // 
@@ -218,9 +218,9 @@ namespace WindowsFormsApp1
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.label6.Location = new System.Drawing.Point(108, 104);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(94, 20);
+            this.label6.Size = new System.Drawing.Size(104, 20);
             this.label6.TabIndex = 36;
-            this.label6.Text = "Ma chat lieu";
+            this.label6.Text = "Material code";
             this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label7
@@ -229,9 +229,9 @@ namespace WindowsFormsApp1
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.label7.Location = new System.Drawing.Point(108, 69);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(76, 20);
+            this.label7.Size = new System.Drawing.Size(117, 20);
             this.label7.TabIndex = 37;
-            this.label7.Text = "Tên hang";
+            this.label7.Text = "Name of goods";
             // 
             // comboBox1
             // 
@@ -247,9 +247,9 @@ namespace WindowsFormsApp1
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.label8.Location = new System.Drawing.Point(732, 38);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(38, 20);
+            this.label8.Size = new System.Drawing.Size(54, 20);
             this.label8.TabIndex = 39;
-            this.label8.Text = "Anh";
+            this.label8.Text = "Image";
             // 
             // pictureBox1
             // 
@@ -297,7 +297,7 @@ namespace WindowsFormsApp1
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(96, 38);
             this.button3.TabIndex = 44;
-            this.button3.Text = "Mo";
+            this.button3.Text = "Open";
             this.button3.UseVisualStyleBackColor = true;
             // 
             // dataGridView1

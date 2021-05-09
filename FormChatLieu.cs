@@ -16,7 +16,7 @@ namespace WindowsFormsApp1
 {
     public partial class frmMaterial : Form
     {
-        DataTable tblCL;
+        DataTable tblCL; //table Chất liệu
         public frmMaterial()
         {
             InitializeComponent();

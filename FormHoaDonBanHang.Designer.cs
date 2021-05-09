@@ -120,6 +120,7 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.panel1);
             this.Name = "frmBills";
             this.Text = "Hóa Đơn Bán Hàng";
+            this.Load += new System.EventHandler(this.frmBills_Load);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 

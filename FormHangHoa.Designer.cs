@@ -55,6 +55,7 @@ namespace WindowsFormsApp1
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -245,7 +246,7 @@ namespace WindowsFormsApp1
             // 
             this.label8.AutoSize = true;
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.label8.Location = new System.Drawing.Point(732, 38);
+            this.label8.Location = new System.Drawing.Point(732, 56);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(54, 20);
             this.label8.TabIndex = 39;
@@ -253,7 +254,7 @@ namespace WindowsFormsApp1
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(867, 26);
+            this.pictureBox1.Location = new System.Drawing.Point(867, 42);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(211, 50);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -310,11 +311,23 @@ namespace WindowsFormsApp1
             this.dataGridView1.Size = new System.Drawing.Size(1348, 185);
             this.dataGridView1.TabIndex = 45;
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.label9.Location = new System.Drawing.Point(504, 1);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(308, 37);
+            this.label9.TabIndex = 46;
+            this.label9.Text = "Danh mục hàng hóa";
+            // 
             // frmGoods
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1394, 674);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
@@ -378,5 +391,6 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label label9;
     }
 }

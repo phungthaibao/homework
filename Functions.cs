@@ -18,7 +18,7 @@ namespace WindowsFormsApp1.Class
         {
             conn = new SqlConnection();
             conn.ConnectionString = @"Data Source=ADMIN;Initial Catalog=homework;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
-
+             
             conn.Open();
 
             if (conn.State == ConnectionState.Open)

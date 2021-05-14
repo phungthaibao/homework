@@ -185,6 +185,9 @@ namespace WindowsFormsApp1
             this.Close();
         }
 
-       
+        private void dgvMaterial_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

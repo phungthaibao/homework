@@ -25,13 +25,29 @@ namespace WindowsFormsApp1
 
         private void btnSignin_Click(object sender, EventArgs e)
         {
-            SqlConnection conn = new SqlConnection(@"Data Source=Data Source=(localdb)\ProjectsV13;Initial Catalog=master;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
-            string sqlSelect = "select * from Table where user=" + txtUserName.Text;
+            SqlConnection conn = new SqlConnection(@"Data Source=(localdb)\ProjectsV13;Initial Catalog=homework;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+            string sqlSelect = "select * from Table where user=" + txtUserName.Text + "' and Password = '" + txtPassword.Text + "'";
+            conn.Open();
+            SqlCommand cmd = new SqlCommand(sqlSelect, conn);
+            SqlDataReader reader = cmd.ExecuteReader();
+            if (reader.Read() == true)
+            {
+                this.Hide();
+                Form main = new frmMain();
+                main.Show();
+            }
+            else
+            {
+                MessageBox.Show("Something wrong");
+                txtUserName.Text = "";
+                txtPassword.Text = "";
+                txtUserName.Focus();
+            }
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
     }
 }

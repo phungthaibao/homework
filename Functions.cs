@@ -17,14 +17,13 @@ namespace WindowsFormsApp1.Class
         public static void Connect()
         {
             conn = new SqlConnection();
-            conn.ConnectionString = @"Data Source=ADMIN;Initial Catalog=homework;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+            conn.ConnectionString = @"Data Source=(localdb)\ProjectsV13;Initial Catalog=homework;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
              
             conn.Open();
 
             if (conn.State == ConnectionState.Open)
                 MessageBox.Show("successful connection");
             else MessageBox.Show("Cannot connection with database");
-
         }
         public static void Disconnect()
         {
@@ -121,8 +120,6 @@ namespace WindowsFormsApp1.Class
             reader.Close();
             return ma;
         }
-
-
 
     }
 }

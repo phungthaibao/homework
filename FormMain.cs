@@ -56,5 +56,6 @@ namespace WindowsFormsApp1
             frmG.Show(); // .Show(); dang thong thuong
         }
 
+
     }
 }

@@ -63,8 +63,8 @@ namespace WindowsFormsApp1
             this.mnuHelp});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(968, 33);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 1, 0, 1);
+            this.menuStrip1.Size = new System.Drawing.Size(645, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -73,13 +73,13 @@ namespace WindowsFormsApp1
             this.mnuFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuExit});
             this.mnuFile.Name = "mnuFile";
-            this.mnuFile.Size = new System.Drawing.Size(54, 29);
+            this.mnuFile.Size = new System.Drawing.Size(37, 22);
             this.mnuFile.Text = "File";
             // 
             // mnuExit
             // 
             this.mnuExit.Name = "mnuExit";
-            this.mnuExit.Size = new System.Drawing.Size(141, 34);
+            this.mnuExit.Size = new System.Drawing.Size(93, 22);
             this.mnuExit.Text = "Exit";
             this.mnuExit.Click += new System.EventHandler(this.mnuExit_Click);
             // 
@@ -91,34 +91,34 @@ namespace WindowsFormsApp1
             this.mnuCustommer,
             this.mnuGoods});
             this.mnuCategory.Name = "mnuCategory";
-            this.mnuCategory.Size = new System.Drawing.Size(100, 29);
+            this.mnuCategory.Size = new System.Drawing.Size(67, 22);
             this.mnuCategory.Text = "Category";
             // 
             // mnuMaterial
             // 
             this.mnuMaterial.Name = "mnuMaterial";
-            this.mnuMaterial.Size = new System.Drawing.Size(270, 34);
+            this.mnuMaterial.Size = new System.Drawing.Size(126, 22);
             this.mnuMaterial.Text = "Material";
             this.mnuMaterial.Click += new System.EventHandler(this.mnuMaterial_Click);
             // 
             // mnuStaff
             // 
             this.mnuStaff.Name = "mnuStaff";
-            this.mnuStaff.Size = new System.Drawing.Size(270, 34);
+            this.mnuStaff.Size = new System.Drawing.Size(126, 22);
             this.mnuStaff.Text = "Staff";
             this.mnuStaff.Click += new System.EventHandler(this.mnuStaff_Click);
             // 
             // mnuCustommer
             // 
             this.mnuCustommer.Name = "mnuCustommer";
-            this.mnuCustommer.Size = new System.Drawing.Size(270, 34);
+            this.mnuCustommer.Size = new System.Drawing.Size(126, 22);
             this.mnuCustommer.Text = "Customer";
             this.mnuCustommer.Click += new System.EventHandler(this.mnuCustommer_Click);
             // 
             // mnuGoods
             // 
             this.mnuGoods.Name = "mnuGoods";
-            this.mnuGoods.Size = new System.Drawing.Size(270, 34);
+            this.mnuGoods.Size = new System.Drawing.Size(126, 22);
             this.mnuGoods.Text = "Goods";
             this.mnuGoods.Click += new System.EventHandler(this.mnuGoods_Click);
             // 
@@ -127,13 +127,13 @@ namespace WindowsFormsApp1
             this.mnuBills.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuSaleInvoice});
             this.mnuBills.Name = "mnuBills";
-            this.mnuBills.Size = new System.Drawing.Size(58, 29);
+            this.mnuBills.Size = new System.Drawing.Size(40, 22);
             this.mnuBills.Text = "Bills";
             // 
             // mnuSaleInvoice
             // 
             this.mnuSaleInvoice.Name = "mnuSaleInvoice";
-            this.mnuSaleInvoice.Size = new System.Drawing.Size(206, 34);
+            this.mnuSaleInvoice.Size = new System.Drawing.Size(136, 22);
             this.mnuSaleInvoice.Text = "Sale invoice";
             // 
             // mnuFind
@@ -143,25 +143,25 @@ namespace WindowsFormsApp1
             this.mnuFindGoods,
             this.mnuFindCustomers});
             this.mnuFind.Name = "mnuFind";
-            this.mnuFind.Size = new System.Drawing.Size(62, 29);
+            this.mnuFind.Size = new System.Drawing.Size(42, 22);
             this.mnuFind.Text = "Find";
             // 
             // mnuFindBills
             // 
             this.mnuFindBills.Name = "mnuFindBills";
-            this.mnuFindBills.Size = new System.Drawing.Size(199, 34);
+            this.mnuFindBills.Size = new System.Drawing.Size(131, 22);
             this.mnuFindBills.Text = "Bills";
             // 
             // mnuFindGoods
             // 
             this.mnuFindGoods.Name = "mnuFindGoods";
-            this.mnuFindGoods.Size = new System.Drawing.Size(199, 34);
+            this.mnuFindGoods.Size = new System.Drawing.Size(131, 22);
             this.mnuFindGoods.Text = "Goods";
             // 
             // mnuFindCustomers
             // 
             this.mnuFindCustomers.Name = "mnuFindCustomers";
-            this.mnuFindCustomers.Size = new System.Drawing.Size(199, 34);
+            this.mnuFindCustomers.Size = new System.Drawing.Size(131, 22);
             this.mnuFindCustomers.Text = "Customers";
             // 
             // mnuNotify
@@ -170,19 +170,19 @@ namespace WindowsFormsApp1
             this.mnuInventory,
             this.mnuRevenue});
             this.mnuNotify.Name = "mnuNotify";
-            this.mnuNotify.Size = new System.Drawing.Size(77, 29);
+            this.mnuNotify.Size = new System.Drawing.Size(52, 22);
             this.mnuNotify.Text = "Notify";
             // 
             // mnuInventory
             // 
             this.mnuInventory.Name = "mnuInventory";
-            this.mnuInventory.Size = new System.Drawing.Size(189, 34);
+            this.mnuInventory.Size = new System.Drawing.Size(124, 22);
             this.mnuInventory.Text = "Inventory";
             // 
             // mnuRevenue
             // 
             this.mnuRevenue.Name = "mnuRevenue";
-            this.mnuRevenue.Size = new System.Drawing.Size(189, 34);
+            this.mnuRevenue.Size = new System.Drawing.Size(124, 22);
             this.mnuRevenue.Text = "Revenue";
             // 
             // mnuHelp
@@ -190,23 +190,23 @@ namespace WindowsFormsApp1
             this.mnuHelp.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.Help});
             this.mnuHelp.Name = "mnuHelp";
-            this.mnuHelp.Size = new System.Drawing.Size(65, 29);
+            this.mnuHelp.Size = new System.Drawing.Size(44, 22);
             this.mnuHelp.Text = "Help";
             // 
             // Help
             // 
             this.Help.Name = "Help";
-            this.Help.Size = new System.Drawing.Size(151, 34);
+            this.Help.Size = new System.Drawing.Size(99, 22);
             this.Help.Text = "Help";
             // 
             // frmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(968, 661);
+            this.ClientSize = new System.Drawing.Size(645, 430);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.Name = "frmMain";
             this.Text = "Chương trình quản lý bán hàng";
             this.Load += new System.EventHandler(this.frmMain_Load);

@@ -25,7 +25,7 @@ namespace WindowsFormsApp1
 
         private void btnSignin_Click(object sender, EventArgs e)
         {
-            /*
+            
             SqlConnection conn = new SqlConnection(@"Data Source=(localdb)\ProjectsV13;Initial Catalog=homework;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
             string sqlSelect = "select * from Login where Username=" + "'" + txtUserName.Text + "'" + " and Passwords= " + "'" + txtPassword.Text + "'";
             conn.Open();
@@ -34,22 +34,27 @@ namespace WindowsFormsApp1
             if (reader.Read() == true)
             {
                
-                FormMn = new frmMain();
-            this.Hide();
-            main.ShowDialog();
-           /* }
+                frmMain main = new frmMain();
+                this.Hide();
+                main.ShowDialog();
+            }
             else
             {
                 MessageBox.Show("Something wrong");
                 txtUserName.Text = "";
                 txtPassword.Text = "";
                 txtUserName.Focus();
-            }*/
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

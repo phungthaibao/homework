@@ -115,6 +115,7 @@ namespace WindowsFormsApp1
             this.groupBox2.Size = new System.Drawing.Size(400, 88);
             this.groupBox2.TabIndex = 7;
             this.groupBox2.TabStop = false;
+            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // FormLogin
             // 

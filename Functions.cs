@@ -17,7 +17,7 @@ namespace WindowsFormsApp1.Class
         public static void Connect()
         {
             conn = new SqlConnection();
-            conn.ConnectionString = @"Data Source=(localdb)\ProjectsV13;Initial Catalog=homework;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+            conn.ConnectionString = @"Data Source=ADMIN;Initial Catalog=quanlybanhang;Integrated Security=True";
              
             conn.Open();
 
@@ -36,10 +36,10 @@ namespace WindowsFormsApp1.Class
         }
         public static DataTable GetDataToTable(string sql)
         {
-            SqlDataAdapter dap = new SqlDataAdapter(sql, conn);
+            SqlDataAdapter dap = new SqlDataAdapter(sql, conn); //Định nghĩa đối tượng thuộc lớp SqlDataAdapter
             //Khai báo đối tượng table thuộc lớp DataTable
             DataTable table = new DataTable();
-            dap.Fill(table);
+            dap.Fill(table); //Đổ kết quả từ câu lệnh sql vào table
             return table;
         }
         public static bool CheckKey(string sql)

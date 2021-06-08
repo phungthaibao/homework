@@ -33,7 +33,7 @@ namespace WindowsFormsApp1
         private void LoadDataGirdView()
         {
             string sql;
-            sql = "select * MaChatLieu, TenChatLieu from tblChatLieu";
+            sql = "select MaChatLieu, TenChatLieu from tblChatLieu";
             tblCL = Class.Functions.GetDataToTable(sql);
             dgvMaterial.DataSource = tblCL;
             dgvMaterial.Columns[0].HeaderText = "Mã chất liệu";
@@ -62,6 +62,7 @@ namespace WindowsFormsApp1
             btnModify.Enabled = true;
             btnDelete.Enabled = true;
             btnSkip.Enabled = true;
+
         }
 
 

@@ -52,8 +52,7 @@ namespace WindowsFormsApp1
         private void mnuGoods_Click(object sender, EventArgs e)
         {
             frmGoods frmG = new frmGoods();
-            frmG.MdiParent = this;
-            frmG.Show(); // .Show(); dang thong thuong
+            frmG.ShowDialog(); // .Show(); dang thong thuong
         }
 
 

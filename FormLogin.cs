@@ -26,8 +26,8 @@ namespace WindowsFormsApp1
         private void btnSignin_Click(object sender, EventArgs e)
         {
             
-            SqlConnection conn = new SqlConnection(@"Data Source=(localdb)\ProjectsV13;Initial Catalog=homework;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
-            string sqlSelect = "select * from Login where Username=" + "'" + txtUserName.Text + "'" + " and Passwords= " + "'" + txtPassword.Text + "'";
+            SqlConnection conn = new SqlConnection(@"Data Source=ADMIN;Initial Catalog=quanlybanhang;Integrated Security=True");
+            string sqlSelect = "select * from tblLogin where username=" + "'" + txtUserName.Text + "'" + " and pass= " + "'" + txtPassword.Text + "'";
             conn.Open();
             SqlCommand cmd = new SqlCommand(sqlSelect, conn);
             SqlDataReader reader = cmd.ExecuteReader();
